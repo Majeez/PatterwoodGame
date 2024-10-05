@@ -152,76 +152,78 @@ class Game {
 
     searchForWin() {
         for (const r of this.GameBoard.board) {
-            if (!r[0] || !r[1] || !r[2] || !r[3]) break;
-            if (r[0].color == r[1].color && r[0].color == r[2].color && c[0].color == c[3].color) {
+            if (!r[0] || !r[1] || !r[2] || !r[3]) continue;
+            if (r[0].color === r[1].color && r[0].color === r[2].color && c[0].color === c[3].color) {
                 return true;
             }
-            if (r[0].isTall == r[1].isTall && r[0].isTall == r[2].isTall && r[0].isTall == r[3].isTall) {
+            if (r[0].isTall === r[1].isTall && r[0].isTall === r[2].isTall && r[0].isTall === r[3].isTall) {
                 return true;
             }
 
-            if (r[0].shape == r[1].shape && r[0].shape == r[2].shape && r[0].shape == r[3].shape) {
+            if (r[0].shape === r[1].shape && r[0].shape === r[2].shape && r[0].shape === r[3].shape) {
                 return true;
             }
-            if (r[0].isHoled == r[1].isHoled && r[0].isHoled == r[2].isHoled && r[0].isHoled == r[3].isHoled) {
+            if (r[0].isHoled === r[1].isHoled && r[0].isHoled === r[2].isHoled && r[0].isHoled === r[3].isHoled) {
                 return true;
             }
         }
         let b = this.GameBoard.board
         for (let i = 0; i < b.length; i++) {
             let c = [b[0][i], b[1][i], b[2][i], b[3][i]]
-            if (!c[0] || !c[1] || !c[2] || !c[3]) break;
-            if (c[0].color == c[1].color && c[0].color == c[2].color && c[0].color == c[3].color) {
+            if (!c[0] || !c[1] || !c[2] || !c[3]) continue;
+            if (c[0].color === c[1].color && c[0].color === c[2].color && c[0].color === c[3].color) {
                 return true
             }
-            if (c[0].isTall == c[1].isTall && c[0].isTall == c[2].isTall && c[0].isTall == c[3].isTall) {
+            if (c[0].isTall === c[1].isTall && c[0].isTall === c[2].isTall && c[0].isTall === c[3].isTall) {
                 return true
             }
 
-            if (c[0].shape == c[1].shape && c[0].shape == c[2].shape && c[0].shape == c[3].shape) {
+            if (c[0].shape === c[1].shape && c[0].shape === c[2].shape && c[0].shape === c[3].shape) {
                 return true
             }
-            if (c[0].isHoled == c[1].isHoled && c[0].isHoled == c[2].isHoled && c[0].isHoled == c[3].isHoled) {
+            if (c[0].isHoled === c[1].isHoled && c[0].isHoled === c[2].isHoled && c[0].isHoled === c[3].isHoled) {
                 return true
             }
         }
-        if(b[0][0] && b[1][1] && b[2][2] && b[3][3]){
-            if (b[0][0].color == b[1][1].color && b[0][0].color == b[2][2].color && b[0][0].color == b[3][3].color) {
+        if (b[0][0] && b[1][1] && b[2][2] && b[3][3]) {
+            if (b[0][0].color === b[1][1].color && b[0][0].color === b[2][2].color && b[0][0].color === b[3][3].color) {
                 return true
             }
-            if (b[0][0].isTall == b[1][1].isTall && b[0][0].isTall == b[2][2].isTall && b[0][0].isTall == b[3][3].isTall) {
+            if (b[0][0].isTall === b[1][1].isTall && b[0][0].isTall === b[2][2].isTall && b[0][0].isTall === b[3][3].isTall) {
                 return true
             }
 
-            if (b[0][0].shape == b[1][1].shape && b[0][0].shape == b[2][2].shape && b[0][0].shape == b[3][3].shape) {
+            if (b[0][0].shape === b[1][1].shape && b[0][0].shape === b[2][2].shape && b[0][0].shape === b[3][3].shape) {
                 return true
             }
-            if (b[0][0].isHoled == b[1][1].isHoled && b[0][0].isHoled == b[2][2].isHoled && b[0][0].isHoled == b[3][3].isHoled) {
+            if (b[0][0].isHoled === b[1][1].isHoled && b[0][0].isHoled === b[2][2].isHoled && b[0][0].isHoled === b[3][3].isHoled) {
                 return true
             }
         }
-        if(b[0][3] && b[1][2] && b[2][1] && b[3][0]){
-            if (b[0][3].color == b[1][2].color && b[0][3].color == b[2][1].color && b[0][3].color == b[3][0].color) {
+        if (b[0][3] && b[1][2] && b[2][1] && b[3][0]) {
+            if (b[0][3].color === b[1][2].color && b[0][3].color === b[2][1].color && b[0][3].color === b[3][0].color) {
                 return true
             }
-            if (b[0][3].isTall == b[1][2].isTall && b[0][3].isTall == b[2][1].isTall && b[0][3].isTall == b[3][0].isTall)  {
+            if (b[0][3].isTall === b[1][2].isTall && b[0][3].isTall === b[2][1].isTall && b[0][3].isTall === b[3][0].isTall) {
                 return true
             }
 
-            if (b[0][3].shape == b[1][2].shape && b[0][3].shape == b[2][1].shape && b[0][3].shape == b[3][0].shape) {
+            if (b[0][3].shape === b[1][2].shape && b[0][3].shape === b[2][1].shape && b[0][3].shape === b[3][0].shape) {
                 return true
             }
-            if (b[0][3].isHoled == b[1][2].isHoled && b[0][3].isHoled == b[2][1].isHoled && b[0][3].isHoled == b[3][0].isHoled) {
+            if (b[0][3].isHoled === b[1][2].isHoled && b[0][3].isHoled === b[2][1].isHoled && b[0][3].isHoled === b[3][0].isHoled) {
                 return true
             }
         }
         return false;
     }
 
-    checkWin(){
+    checkWin() {
         this.isOver = this.searchForWin()
         return this.isOver;
     }
+
+
 
     placeActivePieceAtLocation(idx, idy) {
         if (this.activePiece) {
